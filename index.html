@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__left">
+            <img src="masanga logo.png" alt="Logo">
+        </div>
+        <div class="header__right">
+            <h4>071 773 9822 | info@imaammasangabookrestoration.co.za</h4>
+            <!-- Add your contact information here -->
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <p>Stay tuned, we're working on something awesome!</p>
+        <p>Sign up for updates:</p>
+        <!-- <form action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email">
+            <button type="submit">Submit</button>
+        </form> -->
+        <form id="emailForm" action="#" method="post">
+            <!-- form begin here -->
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button id="btn" type="submit">Submit</button>
+            <!-- form ends here -->
+        </form>
+    </div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            var email = document.getElementById('email').value;
+
+            // Check if the email field is empty
+            if (!email) {
+                alert("Please enter your email address.");
+                return; // Prevent sending the email if the email field is empty
+            }
+
+            var body = 'Email: ' + email;
+
+            Email.send({
+                SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+                To: 'messages.semtexagency@outlook.com',
+                From: "semtexagency@gmail.com",
+                Subject: "New Email Subscription",
+                Body: body
+            }).then(
+                function (message) {
+                    alert("Thank you for subscribing!");
+                    document.getElementById('email').value = ''; // Clear the email input field
+                }
+            ).catch(
+                function (error) {
+                    console.log("Email sending error:", error);
+                    alert("Failed to subscribe. Please try again later.");
+                }
+            );
+        });
+    </script>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <h8>&copy; 2024 Imaam Masanga Book Restoration. All rights reserved. Designed by <a
+                href="www.semtexagency.co.za" class="semtex">Semtex Agency</a></h8>
+    </footer>
+</body>
+
+</html>
