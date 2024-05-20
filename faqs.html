@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Frequently Asked Questions</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Style for contact form -->
+  <style>
+    #contactModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff6d00;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+    height: auto; /* Allow the height to adjust automatically based on content */
+}
+    /* Style the form container */
+    #contactModal {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Style input fields */
+    #contactModal input[type="text"],
+    #contactModal input[type="email"],
+    #contactModal textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ff6d00;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Style the "Send" button */
+    #contactModal button {
+        /* background-color: #ff6d00; */
+        color: #ff6d00;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* Add some hover effect to the button */
+    #contactModal button:hover {
+        background-color: #ff6d00;
+    }
+</style>
+<!-- style for contact form ends here -->
+
+<!-- style for header -->
+<style>
+  .header1 {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Transparent black background */
+    padding: 0px 0px;
+    /* Adjust padding as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 98;
+    /* Ensure header stays above other content */
+}
+</style>
+
+</head>
+<body>
+  <nav class=" white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo"><img src="masanga logo.png" alt="" srcset="" width="170"></a>
+      <ul class="right hide-on-med-and-down ">
+        <li><a href="index.html" class="black-text">Home</a></li>
+        <li><a href="services.html" class="black-text">Our Services</a></li>
+        <li><a href="About.html" class="black-text">About</a></li>
+        <li><a href="contact.html" class="black-text">Contact</a></li>
+        <li><a href="faqs.html" class="orange-text">FAQs</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav orange accent-4">
+        <li><a href="index.html" class="white-text">Home</a></li>
+        <li><a href="services.html" class="white-text">Our Services</a></li>
+        <li><a href="About.html" class="white-text">About</a></li>        
+        <li><a href="contact.html" class="white-text">Contact</a></li>
+        <li><a href="faqs.html" class="black-text">FAQs</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger orange-text"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center white-text">Frequently Asked Questions (FAQs)</h1>
+        <div class="row center">
+          <!-- <h5 class="header col s12 light">We Restore Books, Bind, Publish, Print & Resurrect Dead books to give them life!</h5> -->
+        </div>
+        <div class="row center">
+
+          <!-- Contact form configuration starts here -->
+
+          <!-- <a id="showFormButton" class="btn-large waves-effect waves-light orange accent-4">Get In Touch</a> -->
+          <div class="left-align ">
+            <div id="contactModal" class="modal">
+              <div class="modal-content">
+                <h4 class="orange-text center">Get in touch</h4>
+                <form method="post">
+                  <input type="text" name="name" id="name" placeholder="Please Enter Your Name*" required>
+                  <br>
+                  <input type="email" name="email" id="email" placeholder="Please Enter Your Email*" required>
+                  <br>
+                  <input type="text" name="subject" id="subject" placeholder="Please Enter Your Subject">
+                  <br>
+                  <textarea class="#fff3e0 orange lighten-5" name="message" id="message"
+                    placeholder="Write Your Message Here*" required cols="30" rows="5"></textarea>
+                  <br>
+                  <button class="orange accent-4" id="btn"><a class="white-text ">Send</a></button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
+            </div>
+            </li>
+        </ul>
+      </div>
+      <section id="contactForm" style="display: none;">
+        <!-- form begin here -->
+    
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+          var btn = document.getElementById('btn');
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+    
+            // Check if any required fields are empty
+            if (!name || !email || !message) {
+              alert("Please fill in all the required fields.");
+              return; // Prevent sending the email if fields are missing
+            }
+    
+            var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+    
+            Email.send({
+              SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+              To: 'messages.semtexagency@outlook.com',
+              From: "semtexagency@gmail.com",
+              Subject: "New Contact Form Enquiry",
+              Body: body
+            }).then(
+              function (message) {
+                alert("Thank you, we will be in touch shortly!");
+    
+                // Clear form fields after successful submission
+                setTimeout(function () {
+                  document.getElementById('name').value = '';
+                  document.getElementById('email').value = '';
+                  document.getElementById('subject').value = '';
+                  document.getElementById('message').value = '';
+                }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+              }
+            ).catch(
+              function (error) {
+                console.log("Email sending error:", error);
+              }
+            );
+          });
+        </script>
+    
+        <!-- form ends here -->
+      </section>
+      <script>
+        // JavaScript to initialize the modal and handle button click
+        document.addEventListener('DOMContentLoaded', function () {
+          const showFormButton = document.getElementById('showFormButton');
+          const contactModal = document.getElementById('contactModal');
+    
+          // Initialize the modal
+          M.Modal.init(contactModal);
+    
+          showFormButton.addEventListener('click', function () {
+            // Open the modal when the button is clicked
+            const modalInstance = M.Modal.getInstance(contactModal);
+            modalInstance.open();
+          });
+        });
+      </script>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+
+    <!-- Contact form configuration ends here -->
+
+    <div class="parallax"><img src="truth-concept-arrangement-with-magnifier copy.jpg" alt="Unsplashed background img 1" width="100"></div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section">
+
+      </div>
+      <div class="section">
+        <div class="faq-item">
+          <h4>
+            <div class="question center" onclick="toggleAnswer(this)">How long does it take to bind my book?</div>
+            <div class="answer center black-text">All books are different, but most new bindings take approx. 5 working days. This can change during peak times (i.e. towards the end of term / semester).</div>
+          </h4>
+
+        </div>
+        <div class="faq-item">
+          <h4>
+            <div class="question center" onclick="toggleAnswer(this)">Do you print?</div>
+            <div class="answer center black-text">No and yes, you'll need to provide your pages (for new books) printed and ready to be bound. The pages should be provided collated and untrimmed. Printing can be organised by us - print management fees apply. Contact us for recommended printers.</div>
+          </h4>
+
+        </div>
+        <div class="faq-item">
+          <h4>
+            <div class="question center" onclick="toggleAnswer(this)">Do you have an express service?</div>
+            <div class="answer center black-text">Yes. Fees apply. During peak times express services may not be possible due to the daily workload.</div>
+          </h4>
+
+       
+        <!-- Add more FAQ items as needed -->
+        <script>
+          const questions = document.querySelectorAll('.question');
+
+          questions.forEach(question => {
+            question.addEventListener('click', () => {
+              const answer = question.querySelector('.answer');
+              answer.classList.toggle('hidden');
+            });
+          });
+        </script>
+
+
+
+
+      </div>
+      
+  </section>
+
+  <footer class="page-footer orange accent-4">
+    <div class="container ">
+      <div class="row">
+        <div class="col l6 s12">
+          <div class="col l3 s12">
+            <h5><img src="Masanga Footer logo.png" width="110"></h5>
+          </div>
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4">Imaam Idris Masanga has a world-class book restoration, binder, publishers and printing centre who can meticulously restore your fine books and papers, and create exquisite covers and bindings for your projects.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Useful Links</h5>
+          <li><a href="services.html" class="white-text">Our Services</a></li>
+          <li><a href="About.html" class="white-text">About Us</a></li>
+          <li><a href="contact.html" class="white-text">Contact Us</a></li>
+          <li><a href="faqs.html" class="white-text">FAQs</a></li>
+         
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <ul>
+            <h5><a href="tel:+27717739822" class="white-text"><i class="material-icons left"></i>071 773 9822</a>
+            </h5>
+            <li><a href="mailto:info@imaammasangabookrestoration.co.za" class="white-text"><i
+              class="material-icons left"></i>info@imaammasangabookrestoration.co.za</a></li>
+              <li>Address: 53 Indra Street, Mayfair West, Johannesburg.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Copyright © 2024 Imaam Idris Masanga Book Restoration. All Rights Reserved. Designed by <a class="brown-text text-lighten-3" href="https://www.semtexagency.co.za">Semtex Agency</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

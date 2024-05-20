@@ -1,85 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <style>
-       
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home - Imaam Idris Masanga Book Restoration</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Style for contact form -->
+  <style>
+    #contactModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff6d00;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+    height: auto; /* Allow the height to adjust automatically based on content */
+}
+    /* Style the form container */
+    #contactModal {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Style input fields */
+    #contactModal input[type="text"],
+    #contactModal input[type="email"],
+    #contactModal textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ff6d00;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Style the "Send" button */
+    #contactModal button {
+        /* background-color: #ff6d00; */
+        color: #ff6d00;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* Add some hover effect to the button */
+    #contactModal button:hover {
+        background-color: #ff6d00;
+    }
+</style>
+<!-- style for contact form ends here -->
+
+<!-- style for header -->
+<style>
+  .header1 {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Transparent black background */
+    padding: 0px 0px;
+    /* Adjust padding as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 98;
+    /* Ensure header stays above other content */
+}
+</style>
+
+
 </head>
-
 <body>
-    <header class="header">
-        <div class="header__left">
-            <img src="masanga logo.png" alt="Logo">
-        </div>
-        <div class="header__right">
-            <h4>071 773 9822 | info@imaammasangabookrestoration.co.za</h4>
-            <!-- Add your contact information here -->
-        </div>
-    </header>
+  <nav class=" white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo"><img src="masanga logo.png" alt="" srcset="" width="170"></a>
+      <ul class="right hide-on-med-and-down ">
+        <li><a href="index.html" class="orange-text">Home</a></li>
+        <li><a href="services.html" class="black-text">Our Services</a></li>
+        <li><a href="About.html" class="black-text">About</a></li>
+        <li><a href="contact.html" class="black-text">Contact</a></li>
+        <li><a href="faqs.html" class="black-text">FAQs</a></li>
+      </ul>
 
-    <div class="container">
-        <h1>Coming Soon</h1>
-        <p>Stay tuned, we're working on something awesome!</p>
-        <p>Sign up for updates:</p>
-        <!-- <form action="#" method="post">
-            <input type="email" name="email" placeholder="Enter your email">
-            <button type="submit">Submit</button>
-        </form> -->
-        <form id="emailForm" action="#" method="post">
-            <!-- form begin here -->
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            <button id="btn" type="submit">Submit</button>
-            <!-- form ends here -->
-        </form>
+      <ul id="nav-mobile" class="sidenav orange accent-4">
+        <li><a href="index.html" class="">Home</a></li>
+        <li><a href="services.html" class="white-text">Our Services</a></li>
+        <li><a href="About.html" class="white-text">About</a></li>        
+        <li><a href="contact.html" class="white-text">Contact</a></li>
+        <li><a href="faqs.html" class="white-text">FAQs</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger orange-text"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center white-text">Love your books!</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">We Restore Books, Bind, Publish, Print & Resurrect Dead books to give them life!</h5>
+        </div>
+        <div class="row center">
+
+          <!-- Contact form configuration starts here -->
+
+          <a id="showFormButton" class="btn-large waves-effect waves-light orange accent-4">Get In Touch</a>
+          <div class="left-align ">
+            <div id="contactModal" class="modal">
+              <div class="modal-content">
+                <h4 class="orange-text center">Get in touch</h4>
+                <form method="post">
+                  <input type="text" name="name" id="name" placeholder="Please Enter Your Name*" required>
+                  <br>
+                  <input type="email" name="email" id="email" placeholder="Please Enter Your Email*" required>
+                  <br>
+                  <input type="text" name="subject" id="subject" placeholder="Please Enter Your Subject">
+                  <br>
+                  <textarea class="#fff3e0 orange lighten-5" name="message" id="message"
+                    placeholder="Write Your Message Here*" required cols="30" rows="5"></textarea>
+                  <br>
+                  <button class="orange accent-4" id="btn"><a class="white-text ">Send</a></button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
+            </div>
+            </li>
+        </ul>
+      </div>
+      <section id="contactForm" style="display: none;">
+        <!-- form begin here -->
+    
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+          var btn = document.getElementById('btn');
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+    
+            // Check if any required fields are empty
+            if (!name || !email || !message) {
+              alert("Please fill in all the required fields.");
+              return; // Prevent sending the email if fields are missing
+            }
+    
+            var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+    
+            Email.send({
+              SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+              To: 'messages.semtexagency@outlook.com',
+              From: "semtexagency@gmail.com",
+              Subject: "New Contact Form Enquiry",
+              Body: body
+            }).then(
+              function (message) {
+                alert("Thank you, we will be in touch shortly!");
+    
+                // Clear form fields after successful submission
+                setTimeout(function () {
+                  document.getElementById('name').value = '';
+                  document.getElementById('email').value = '';
+                  document.getElementById('subject').value = '';
+                  document.getElementById('message').value = '';
+                }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+              }
+            ).catch(
+              function (error) {
+                console.log("Email sending error:", error);
+              }
+            );
+          });
+        </script>
+    
+        <!-- form ends here -->
+      </section>
+      <script>
+        // JavaScript to initialize the modal and handle button click
+        document.addEventListener('DOMContentLoaded', function () {
+          const showFormButton = document.getElementById('showFormButton');
+          const contactModal = document.getElementById('contactModal');
+    
+          // Initialize the modal
+          M.Modal.init(contactModal);
+    
+          showFormButton.addEventListener('click', function () {
+            // Open the modal when the button is clicked
+            const modalInstance = M.Modal.getInstance(contactModal);
+            modalInstance.open();
+          });
+        });
+      </script>
+        </div>
+        <br><br>
+
+      </div>
     </div>
 
-    <script>
-        var btn = document.getElementById('btn');
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
+    <!-- Contact form configuration ends here -->
 
-            var email = document.getElementById('email').value;
+    <div class="parallax"><img src="view-3d-book-with-student.jpg" alt="Unsplashed background img 1" width="100"></div>
+  </div>
 
-            // Check if the email field is empty
-            if (!email) {
-                alert("Please enter your email address.");
-                return; // Prevent sending the email if the email field is empty
-            }
 
-            var body = 'Email: ' + email;
+  <div class="container">
+    <div class="section">
 
-            Email.send({
-                SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
-                To: 'messages.semtexagency@outlook.com',
-                From: "semtexagency@gmail.com",
-                Subject: "New Email Subscription",
-                Body: body
-            }).then(
-                function (message) {
-                    alert("Thank you for subscribing!");
-                    document.getElementById('email').value = ''; // Clear the email input field
-                }
-            ).catch(
-                function (error) {
-                    console.log("Email sending error:", error);
-                    alert("Failed to subscribe. Please try again later.");
-                }
-            );
-        });
-    </script>
+      <!--   Icon Section   -->
+      <div class="row">
+        <h4 class="mdi-content-send orange-text center">About Us</h4>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            
+            <h2 class="center orange-text"><i class="material-icons">work</i></h2>
+            <h5 class="center">Guaranteed Service</h5>
 
-    <!-- Footer section -->
-    <footer class="footer">
-        <h8>&copy; 2024 Imaam Masanga Book Restoration. All rights reserved. Designed by <a
-                href="https://www.semtexagency.co.za/" class="semtex">Semtex Agency</a></h8>
-    </footer>
-</body>
+            <p class="light">With over a decade of experience in book restoration, bookbinding, publishing, and printing, we have earned the trust and satisfaction of countless clients. Our skilled team combines traditional techniques with modern innovations to deliver exceptional results for every project.</p>
+          </div>
+        </div>
 
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="material-icons">watch_later</i></h2>
+            <h5 class="center">Speed and Efficiency</h5>
+
+            <p class="light">We understand the value of your time. Our efficient processes and dedicated team ensure that we deliver top-notch book restoration, binding, publishing, and printing services quickly, without compromising on quality. Experience the perfect blend of speed and excellence with us.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center orange-text"><i class="material-icons">tag_faces</i></h2>
+            <h5 class="center">Customer Satisfaction</h5>
+
+            <p class="light">Our top priority is your satisfaction. We are dedicated to understanding your unique needs and delivering services that exceed your expectations. Whether it’s book restoration, binding, publishing, or printing, we strive to make every client happy with our personalized approach.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Give life to your dead books!</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="top-view-vintage-sewing-machine-with-fabric.jpg" alt="Unsplashed background img 2 " width="100"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4 class="orange-text">Our Services</h4>
+          <div class="card ">
+            <div class="">
+              <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <div class="col s12 m12 l4">
+                  <div class="card service-card">
+                    <div class="card-image">
+                      <img src="vintage-books-second-hand-market copy.jpg">
+                    </div>
+                    <div class="card-content" >
+                      <span class="card-title orange-text" >Repairs and Restoration</span>
+                      <p>Our book restoration services go beyond basic repairs to fully restore and preserve the beauty and functionality of your books. Whether it's an antique, a family heirloom, or a rare first edition, our experts use traditional techniques combined with modern technology to ensure your book is restored to its former glory.</p>
+                    </div>
+                    <div class="card-action" >
+                      <a href="services.html" class="orange-text">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12 m12 l4">
+                  <div class="card service-card">
+                    <div class="card-image">
+                      <img src="top-view-vintage-sewing-machine-with-notebook-scissors copy.jpg">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title orange-text">Book Binding</span>
+                      <p>We offer professional book binding services that combine craftsmanship and quality to create durable, beautiful bindings for your books. Whether you're looking to bind a new manuscript, rebind a cherished book, or create custom bindings, our skilled artisans are here to help.
+
+                      </p>
+                    </div>
+                    <div class="card-action">
+                      <a href="services.html" class="orange-text">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12 m12 l4">
+                  <div class="card service-card">
+                    <div class="card-image">
+                      <img src="documents-paperwork-business-strategy-concept.jpg">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title orange-text">Publishing</span>
+                      <p>We offer comprehensive publishing services designed to bring your literary vision to life. Whether you're an aspiring author, a historian, or a business professional, our team provides the expertise and support needed to transform your manuscript into a polished, published work.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="services.html" class="orange-text">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="services.html"><button class="center btn-large orange">Load More</button></a>
+            
+          </div>
+
+          <!-- <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Our services are guaranteed, with over 10 years of experience!</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="stack-books-with-library-scene copy.jpg" alt="Unsplashed background img 3" width="100"></div>
+  </div>
+
+  <footer class="page-footer orange accent-4">
+    <div class="container ">
+      <div class="row">
+        <div class="col l6 s12">
+          <div class="col l3 s12">
+            <h5><img src="Masanga Footer logo.png" width="110"></h5>
+          </div>
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4">Imaam Idris Masanga has a world-class book restoration, binder, publishers and printing centre who can meticulously restore your fine books and papers, and create exquisite covers and bindings for your projects.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Useful Links</h5>
+          <li><a href="services.html" class="white-text">Our Services</a></li>
+          <li><a href="About.html" class="white-text">About Us</a></li>
+          <li><a href="contact.html" class="white-text">Contact Us</a></li>
+          <li><a href="faqs.html" class="white-text">FAQs</a></li>
+         
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <ul>
+            <h5><a href="tel:+27717739822" class="white-text"><i class="material-icons left"></i>071 773 9822</a>
+            </h5>
+            <li><a href="mailto:info@imaammasangabookrestoration.co.za" class="white-text"><i
+              class="material-icons left"></i>info@imaammasangabookrestoration.co.za</a></li>
+              <li>Address: 53 Indra Street, Mayfair West, Johannesburg.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Copyright © 2024 Imaam Idris Masanga Book Restoration. All Rights Reserved. Designed by <a class="brown-text text-lighten-3" href="https://www.semtexagency.co.za">Semtex Agency</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
 </html>
