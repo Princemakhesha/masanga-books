@@ -98,11 +98,26 @@
       </ul>
 
       <ul id="nav-mobile" class="sidenav orange accent-4">
-        <li><a href="index.html" class="">Home</a></li>
+
+        <div><a href="index.html"> <img src="Masanga Logo for side nav (2).png" alt="" srcset="" width="220"></a></div>
+        <hr>
+        <li><a href="index.html" class="waves-effect waves-light btn-flat black-text">Home<i
+          class="material-icons left black-text">home</i></a></li>
+          <li><a href="services.html" class="waves-effect waves-light btn-flat white-text">Our Services<i
+            class="material-icons left white-text">business_center</i></a></li>
+            <li><a href="About.html" class="waves-effect waves-light btn-flat white-text">About<i
+              class="material-icons left white-text">group</i></a></li>
+              <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact<i
+                class="material-icons left white-text">headset_mic</i></a></li>
+                <li><a href="faqs.html" class="waves-effect waves-light btn-flat white-text">FAQs<i
+                  class="material-icons left white-text">
+                  help_outline</i></a></li>
+
+        <!-- <li><a href="index.html" class="">Home</a></li>
         <li><a href="services.html" class="white-text">Our Services</a></li>
         <li><a href="About.html" class="white-text">About</a></li>        
         <li><a href="contact.html" class="white-text">Contact</a></li>
-        <li><a href="faqs.html" class="white-text">FAQs</a></li>
+        <li><a href="faqs.html" class="white-text">FAQs</a></li> -->
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger orange-text"><i class="material-icons">menu</i></a>
     </div>
@@ -168,10 +183,10 @@
             var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
     
             Email.send({
-              SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+              SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175",
               To: 'messages.semtexagency@outlook.com',
-              From: "semtexagency@gmail.com",
-              Subject: "New Contact Form Enquiry",
+              From: "messages.semtexagency@outlook.com",
+              Subject: "A client wants to get in touch from home page - For imaam idris masanga book restoration",
               Body: body
             }).then(
               function (message) {

@@ -13,58 +13,56 @@
 
     <!-- Style for contact form -->
     <style>
-        #contactModal textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ff6d00;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-            /* Ensure padding doesn't affect width */
-            height: auto;
-            /* Allow the height to adjust automatically based on content */
-        }
-
-        /* Style the form container */
-        #contactModal {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Style input fields */
-        #contactModal input[type="text"],
-        #contactModal input[type="email"],
-        #contactModal textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ff6d00;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-        /* Style the "Send" button */
-        #contactModal button {
-            /* background-color: #ff6d00; */
-            color: #ff6d00;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        /* Add some hover effect to the button */
-        #contactModal button:hover {
-            background-color: #ff6d00;
-        }
-    </style>
+      #contactModal textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ff6d00;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      /* Ensure padding doesn't affect width */
+      height: auto; /* Allow the height to adjust automatically based on content */
+  }
+      /* Style the form container */
+      #contactModal {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          max-width: 600px;
+          margin: 0 auto;
+      }
+  
+      /* Style input fields */
+      #contactModal input[type="text"],
+      #contactModal input[type="email"],
+      #contactModal textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ff6d00;
+          border-radius: 5px;
+          font-size: 16px;
+          box-sizing: border-box;
+      }
+  
+      /* Style the "Send" button */
+      #contactModal button {
+          /* background-color: #ff6d00; */
+          color: #ff6d00;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+  
+      /* Add some hover effect to the button */
+      #contactModal button:hover {
+          background-color: #ff6d00;
+      }
+  </style>
     <!-- style for contact form ends here -->
 
     <!-- style for header -->
@@ -116,11 +114,24 @@
             </ul>
 
             <ul id="nav-mobile" class="sidenav orange accent-4">
-                <li><a href="index.html" class="white-text">Home</a></li>
+              <div><a href="index.html"> <img src="Masanga Logo for side nav (2).png" alt="" srcset="" width="220"></a></div>
+              <hr>
+              <li><a href="index.html" class="waves-effect waves-light btn-flat white-text">Home<i
+                class="material-icons left white-text">home</i></a></li>
+                <li><a href="services.html" class="waves-effect waves-light btn-flat black-text">Our Services<i
+                  class="material-icons left black-text">business_center</i></a></li>
+                  <li><a href="About.html" class="waves-effect waves-light btn-flat white-text">About<i
+                    class="material-icons left white-text">group</i></a></li>
+                    <li><a href="contact.html" class="waves-effect waves-light btn-flat white-text">Contact<i
+                      class="material-icons left white-text">headset_mic</i></a></li>
+                      <li><a href="faqs.html" class="waves-effect waves-light btn-flat white-text">FAQs<i
+                        class="material-icons left white-text">
+                        help_outline</i></a></li>
+                <!-- <li><a href="index.html" class="white-text">Home</a></li>
                 <li><a href="services.html" class="black-text">Our Services</a></li>
                 <li><a href="About.html" class="white-text">About</a></li>
                 <li><a href="contact.html" class="white-text">Contact</a></li>
-                <li><a href="faqs.html" class="white-text">FAQs</a></li>
+                <li><a href="faqs.html" class="white-text">FAQs</a></li> -->
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger orange-text"><i
                     class="material-icons">menu</i></a>
@@ -380,10 +391,10 @@
                           <br>
                           <input type="text" name="subject" id="subject" placeholder="Please Enter Your Subject">
                           <br>
-                          <textarea class="#64b5f6 blue lighten-2" name="message" id="message"
+                          <textarea class="#fff3e0 orange lighten-5" name="message" id="message"
                             placeholder="Write Your Message Here*" required cols="30" rows="5"></textarea>
                           <br>
-                          <button class="indigo" id="btn"><a class="white-text">Send</a></button>
+                          <button class="orange accent-4" id="btn"><a class="white-text">Send</a></button>
                           <!-- ... (your form fields and submit button) ... -->
                         </form>
                       </div>
@@ -419,10 +430,10 @@
                   var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
           
                   Email.send({
-                    SecureToken: "441e3309-b23a-428f-bfef-3e0f3c44c12b",
+                    SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175",
                     To: 'messages.semtexagency@outlook.com',
-                    From: "semtexagency@gmail.com",
-                    Subject: "New Contact Form Enquiry",
+                    From: "messages.semtexagency@outlook.com",
+                    Subject: "A client is requesting a quote - For imaam idris masanga book restoration",
                     Body: body
                   }).then(
                     function (message) {
